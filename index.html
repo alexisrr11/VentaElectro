@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tienda - Electrodomésticos Usados</title>
+  <!-- Tailwind CDN (para prototipo rápido) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Iconos (Boxicons) -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
+    }
+  </style>
+  <script type="module" src="./index.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- HEADER -->
+  <header class="bg-black/90 backdrop-blur text-white sticky top-0 z-40 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div>
+          <h1 class="text-lg font-semibold">ElectroUsados</h1>
+          <p class="text-xs text-gray-500 -mt-1">Calidad verificada — garantía 30 días</p>
+        </div>
+      </a>
+
+      <div class="flex gap-2">
+        <div class="flex items-center gap-2">
+          <div class="relative">
+            <input id="searchInput" type="search" placeholder="Buscar: TV, Equipos..."
+              class="text-black px-2 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300" />
+            <a href="#productos" id="searchBtn" class="absolute text-black right-1 top-1/2 -translate-y-1/2 px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+              <i class='bx bx-search text-xl'></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <button id="mobileMenuBtn" class="border border-amber-500 rounded-full p-1 hover:bg-gray-700">
+            <i class='bx bx-menu text-2xl'></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t absolute bg-black/90 w-full">
+      <div class="px-6 py-4 flex flex-col gap-3 ">
+        <a href="#productos" class="text-lg border-b py-1 border-amber-500">Productos</a>
+        <a href="#servicios" class="text-lg border-b py-1 border-amber-500">Servicios</a>
+        <a href="#contacto" class="text-lg border-b py-1 border-amber-500">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section
+    class="relative border-b-4 border-gray-900 hero-overlay h-[90vh] bg-[url('https://www.zuken.com/en/wp-content/uploads/sites/2/2024/09/PCB-Testing-1510x731.png')] bg-cover bg-center py-24">
+    <div class="max-w-7xl mx-auto px-6 text-white">
+      <div class="max-w-3xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Electrodomésticos usados, revisados y con garantía
+        </h2>
+        <p class="mt-4 text-lg text-white/90">Ahorra hasta 70% en marcas reconocidas. Envíos a todo el país y opción de
+          retiro en tienda.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#productos"
+            class="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-3 rounded-lg shadow">Ver
+            productos</a>
+          <a href="#contacto"
+            class="bg-black/40 inline-flex items-center gap-2 border border-white/30 px-5 py-3 rounded-lg hover:bg-black/70">
+            Contacto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="w-full mx-auto px-6 py-10 bg-[url('https://img.freepik.com/premium-photo/macro-photo-computer-chip-collection-secure-storage-data_177786-2052.jpg')] bg-contain bg-center">
+
+    <!-- FILTROS -->
+    <section class="bg-white/95 rounded-lg p-4 mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <label class="text-sm font-medium">Categoría:</label>
+        <select id="categoryFilter" class="px-3 py-2 border rounded-lg">
+          <option value="all">Todas</option>
+          <option value="TV">Televisiones</option>
+          <option value="Equipo">Equipos de Música</option>
+        </select>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <label class="text-sm font-medium">Ordenar por:</label>
+        <select id="sortSelect" class="px-3 py-2 border rounded-lg">
+          <option value="new">Recientes</option>
+          <option value="price_desc">Mayor precio</option>
+          <option value="price_asc">Menor precio</option>
+        </select>
+      </div>
+    </section>
+
+
+    <!-- GRID DE PRODUCTOS -->
+    <section id="productos" class="mt-6" aria-live="polite">
+      <!-- Aquí se renderizarán dinámicamente los productos agrupados -->
+    </section>
+
+    <!-- SERVICIOS / INFO -->
+    <section id="servicios" class="mt-12 bg-white/95 rounded-2xl p-6 shadow">
+      <h3 class="text-2xl font-semibold">Servicios</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-4 border rounded-lg">
+          <h4 class="font-medium">Revisión técnica</h4>
+          <p class="text-sm text-gray-500 mt-2">Cada equipo pasa por diagnóstico y pruebas antes de salir.</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h4 class="font-medium">Entrega y envío</h4>
+          <p class="text-sm text-gray-500 mt-2">Envíos a todo zona sur (opcional)</p>
+        </div>
+        <div class="p-4 border rounded-lg">
+          <h4 class="font-medium">Financiación</h4>
+          <p class="text-sm text-gray-500 mt-2">Efectivo o Mercado pago.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contacto -->
+  <section id="contacto" class="bg-orange-50 py-12">
+    <div class="container mx-auto max-w-xl">
+      <h2 class="text-2xl font-bold text-center mb-8">📞 Contactanos</h2>
+      <form class="bg-white p-6 rounded shadow space-y-4" id="form">
+        <input class="w-full border rounded p-2" type="text" name="name" placeholder="Nombre Completo" required>
+        <input class="w-full border rounded p-2" type="text" name="producto" placeholder="Producto..." required>
+        <button class="bg-amber-600 text-white px-4 py-2 rounded hover:bg-amber-700 transition" type="submit">
+          Enviar <i class='text-lg bx bxl-whatsapp'></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row md:justify-between gap-4">
+      <div>
+        <h4 class="font-semibold">ElectroUsados</h4>
+        <p class="text-sm text-gray-500 mt-1">Av. Falsa 123 — Ciudad • Lunes a Viernes 9–18</p>
+      </div>
+      <div class="flex gap-4 items-center">
+        <a href="#" class="text-sm text-gray-600 hover:text-amber-600">Política de garantía</a>
+        <a href="#" class="text-sm text-gray-600 hover:text-amber-600">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL CONTACTO -->
+  <div id="contactModal" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="absolute inset-0 bg-black/40" onclick="closeModal()"></div>
+    <div class="relative bg-white rounded-2xl max-w-md w-full p-6 z-10 shadow-lg">
+      <h3 class="text-lg font-semibold">Contactar vendedor</h3>
+      <p class="text-sm text-gray-500 mt-1">Completa tus datos y te respondemos por WhatsApp o llamada.</p>
+      <form id="contactForm" class="mt-4 grid gap-3">
+        <input type="text" id="name" placeholder="Tu nombre" required class="px-3 py-2 border rounded-lg" />
+        <input type="tel" id="phone" placeholder="Teléfono (whatsapp)" required class="px-3 py-2 border rounded-lg" />
+        <textarea id="message" placeholder="Mensaje / producto de interés" rows="3"
+          class="px-3 py-2 border rounded-lg"></textarea>
+        <div class="flex gap-2">
+          <button type="submit" class="flex-1 bg-amber-500 text-white px-4 py-2 rounded-lg">Enviar</button>
+          <button type="button" onclick="closeModal()" class="flex-1 border rounded-lg">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/5491112345678?text=Hola%20quiero%20informaci%C3%B3n%20de%20un%20producto" target="_blank"
+    class="fixed right-5 bottom-5 z-40">
+    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg text-white text-2xl">
+      <i class='bx bxl-whatsapp'></i>
+    </div>
+  </a>
+</body>
+
+</html>

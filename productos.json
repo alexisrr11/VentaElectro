@@ -1,0 +1,79 @@
+[
+  {
+    "categoria": "Equipo",
+    "imagen": "./images/AudioLogic.jpeg",
+    "titulo": "AudioLogic",
+    "descripcion": "Con bluetooth",
+    "precio": "45000",
+    "precioAnterior": null,
+    "estado": "Buen estado",
+    "etiqueta": "Revisado",
+    "garantia": "30 días garantía"
+  },
+  {
+    "categoria": "TV",
+    "imagen": "./images/Philips14.jpeg",
+    "titulo": "TV Philips 14'",
+    "descripcion": "audio-video",
+    "precio": "68000",
+    "precioAnterior": "90000",
+    "estado": "Excelente",
+    "etiqueta": "Oferta",
+    "garantia": null
+  },
+  {
+    "categoria": "Equipo",
+    "imagen": "./images/Takata.jpeg",
+    "titulo": "Takata 200w",
+    "descripcion": "Con bluetooth",
+    "precio": "22500",
+    "precioAnterior": null,
+    "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null
+  },
+  {
+    "categoria": "Equipo",
+    "imagen": "./images/Sanyo.jpeg",
+    "titulo": "Sanyo",
+    "descripcion": "Con bluetooth",
+    "precio": "22500",
+    "precioAnterior": null,
+    "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null
+  },
+  {
+    "categoria": "Equipo",
+    "imagen": "./images/WhatsApp Image 2025-09-30 at 23.34.27 (1).jpeg",
+    "titulo": "LG 20Ls",
+    "descripcion": "Con bluetooth",
+    "precio": "22500",
+    "precioAnterior": null,
+    "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null
+  },
+  {
+    "categoria": "Equipo",
+    "imagen": "./images/SanyoNaranja.jpeg",
+    "titulo": "Sanyo Naranja",
+    "descripcion": "Con bluetooth",
+    "precio": "22500",
+    "precioAnterior": null,
+    "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null
+  },
+  {
+    "categoria": "TV",
+    "imagen": "./images/TCL21'.jpeg",
+    "titulo": "TV TCL 21'",
+    "descripcion": "audio-video",
+    "precio": "22500",
+    "precioAnterior": null,
+    "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null
+  }
+]
