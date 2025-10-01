@@ -205,6 +205,25 @@
     </div>
   </footer>
 
+  <!-- MODAL CONTACTO -->
+  <div id="contactModal" class="fixed inset-0 hidden items-center justify-center z-50">
+    <div class="absolute inset-0 bg-black/40" onclick="closeModal()"></div>
+    <div class="relative bg-white rounded-2xl max-w-md w-full p-6 z-10 shadow-lg">
+      <h3 class="text-lg font-semibold">Contactar vendedor</h3>
+      <p class="text-sm text-gray-500 mt-1">Completa tus datos y te respondemos por WhatsApp o llamada.</p>
+      <form id="contactForm" class="mt-4 grid gap-3">
+        <input type="text" id="name" placeholder="Tu nombre" required class="px-3 py-2 border rounded-lg" />
+        <input type="tel" id="phone" placeholder="Teléfono (whatsapp)" required class="px-3 py-2 border rounded-lg" />
+        <textarea id="message" placeholder="Mensaje / producto de interés" rows="3"
+          class="px-3 py-2 border rounded-lg"></textarea>
+        <div class="flex gap-2">
+          <button type="submit" class="flex-1 bg-amber-500 text-white px-4 py-2 rounded-lg">Enviar</button>
+          <button type="button" onclick="closeModal()" class="flex-1 border rounded-lg">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/5491132408158?text=Hola%20quiero%20informaci%C3%B3n%20de%20un%20producto" target="_blank"
     class="fixed right-5 bottom-5 z-40">
@@ -215,3 +234,4 @@
 </body>
 
 </html>
+
