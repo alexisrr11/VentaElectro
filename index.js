@@ -188,7 +188,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const message = document.getElementById('message').value.trim() || 'Hola, me interesa el producto.';
     // Prepara mensaje para WhatsApp
     const text = encodeURIComponent`(Hola, soy \${name}. \nTel: \${phone}\n\${message}\)`;
-    const wa = 'https://wa.me/541132408158?text=' + text;
+    const wa = 'https://wa.me/5491112345678?text=' + text;
     window.open(wa, '_blank');
     closeModal();
 });
@@ -232,6 +232,7 @@ document.getElementById('searchBtn')?.addEventListener('click', () => {
     });
 });
 
+
 //Whatsapp
 document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -254,4 +255,10 @@ document.getElementById("form").addEventListener("submit", function (e) {
     this.reset();
 });
 
-
+ // Al hacer click, scrollea hasta el final del viewport
+  document.getElementById("scrollDownBtn").addEventListener("click", () => {
+    window.scrollBy({
+      top: window.innerHeight, // baja una pantalla completa (100vh)
+      behavior: "smooth"
+    });
+  });
