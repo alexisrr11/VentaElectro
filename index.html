@@ -21,40 +21,43 @@
   <script type="module" src="./index.js"></script>
 </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body id="inicio" class="bg-gray-50 text-gray-800 antialiased">
 
   <!-- HEADER -->
   <header class="bg-black/90 backdrop-blur text-white sticky top-0 z-40 shadow-sm">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div>
-          <h1 class="text-lg font-semibold">ElectroUsados</h1>
-          <p class="text-xs text-gray-500 -mt-1">Calidad verificada — garantía 30 días</p>
-        </div>
-      </a>
-
-      <div class="flex gap-2">
-        <div class="flex items-center gap-2">
-          <div class="relative">
-            <input id="searchInput" type="search" placeholder="Buscar: TV, Equipos..."
-              class="text-black px-2 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300" />
-            <a href="#productos" id="searchBtn" class="absolute text-black right-1 top-1/2 -translate-y-1/2 px-3 py-1 text-sm rounded-md hover:bg-gray-100">
-              <i class='bx bx-search text-xl'></i>
-            </a>
+      <div class="md:flex gap-4">
+        <a href="#inicio" class="flex items-center pb-2">
+          <div>
+            <h1 class="text-lg font-semibold">ElectroUsados</h1>
+            <p class="text-xs text-gray-500 -mt-1">Calidad verificada — garantía 30 días</p>
+          </div>
+        </a>
+    
+        <div class="flex gap-2">
+          <div class="flex items-center gap-2">
+            <div class="relative">
+              <input id="searchInput" type="search" placeholder="Buscar: TV, Equipos..."
+                class="text-black px-2 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300" />
+              <a href="#productos" id="searchBtn" class="absolute text-black right-1 top-1/2 -translate-y-1/2 px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+                <i class='bx bx-search text-xl'></i>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div>
+      <div>
           <button id="mobileMenuBtn" class="border border-amber-500 rounded-full p-1 hover:bg-gray-700">
-            <i class='bx bx-menu text-2xl'></i>
+            <i class='text-3xl bx bx-menu-alt-right'></i>
           </button>
         </div>
-      </div>
     </div>
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden border-t absolute bg-black/90 w-full">
       <div class="px-6 py-4 flex flex-col gap-3 ">
+        <a href="#inicio" class="text-lg border-b py-1 border-amber-500">Inicio</a>
         <a href="#productos" class="text-lg border-b py-1 border-amber-500">Productos</a>
         <a href="#servicios" class="text-lg border-b py-1 border-amber-500">Servicios</a>
         <a href="#contacto" class="text-lg border-b py-1 border-amber-500">Contacto</a>
