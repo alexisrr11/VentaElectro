@@ -17,6 +17,22 @@
     .hero-overlay {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
     }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .animate-bounce-slow {
+      animation: float 2s ease-in-out infinite;
+    }
   </style>
   <script type="module" src="./index.js"></script>
 </head>
@@ -33,13 +49,14 @@
             <p class="text-xs text-gray-500 -mt-1">Calidad verificada — garantía 30 días</p>
           </div>
         </a>
-    
+
         <div class="flex gap-2">
           <div class="flex items-center gap-2">
             <div class="relative">
               <input id="searchInput" type="search" placeholder="Buscar: TV, Equipos..."
                 class="text-black px-2 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-300" />
-              <a href="#productos" id="searchBtn" class="absolute text-black right-1 top-1/2 -translate-y-1/2 px-3 py-1 text-sm rounded-md hover:bg-gray-100">
+              <a href="#productos" id="searchBtn"
+                class="absolute text-black right-1 top-1/2 -translate-y-1/2 px-3 py-1 text-sm rounded-md hover:bg-gray-100">
                 <i class='bx bx-search text-xl'></i>
               </a>
             </div>
@@ -48,15 +65,15 @@
       </div>
 
       <div>
-          <button id="mobileMenuBtn" class="border border-amber-500 rounded-full p-1 hover:bg-gray-700">
-            <i class='text-3xl bx bx-menu-alt-right'></i>
-          </button>
-        </div>
+        <button id="mobileMenuBtn" class="border-2 border-amber-500 rounded-full p-1 hover:bg-gray-700">
+          <i class='text-3xl bx bx-menu-alt-right'></i>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="hidden border-t absolute bg-black/90 w-full">
-      <div class="px-6 py-4 flex flex-col gap-3 ">
+      <div class="px-6 py-12 flex flex-col gap-3 ">
         <a href="#inicio" class="text-lg border-b py-1 border-amber-500">Inicio</a>
         <a href="#productos" class="text-lg border-b py-1 border-amber-500">Productos</a>
         <a href="#servicios" class="text-lg border-b py-1 border-amber-500">Servicios</a>
@@ -83,12 +100,18 @@
             Contacto
           </a>
         </div>
+        <!-- Botón flotante -->
+        <button id="scrollDownBtn"
+          class="absolute bottom-20 right-[45%] text-5xl bg-black/50 rounded-full p-2 animate-bounce-slow">
+          <i class='bx bx-chevrons-down'></i>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- CONTENEDOR PRINCIPAL -->
-  <main class="w-full mx-auto px-6 py-10 bg-[url('https://img.freepik.com/premium-photo/macro-photo-computer-chip-collection-secure-storage-data_177786-2052.jpg')] bg-contain bg-center">
+  <main
+    class="w-full mx-auto px-6 py-10 bg-[url('https://img.freepik.com/premium-photo/macro-photo-computer-chip-collection-secure-storage-data_177786-2052.jpg')] bg-contain bg-center">
 
     <!-- FILTROS -->
     <section class="bg-white/95 rounded-lg p-4 mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
@@ -152,46 +175,46 @@
     </div>
   </section>
 
-<!-- Footer --> 
-<footer id="contactos" class="bg-black/95 text-gray-200 pt-6">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 pb-8">
+  <!-- Footer -->
+  <footer id="contactos" class="bg-black/95 text-gray-200 pt-6">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 pb-8">
 
-    <!-- Branding -->
-    <div>
-      <p class="text-gray-400 text-sm">
-        Tu tienda de electrodomésticos usados. Calidad garantizada a precios accesibles.
-      </p>
-    </div>
-
-    <!-- Redes sociales / Contacto -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Seguinos / Contacto</h3>
-      <div class="flex gap-4 text-2xl mb-4">
-        <a href="#" class="hover:text-blue-400"><i class='bx bxl-facebook'></i></a>
-        <a href="#" class="hover:text-pink-400"><i class='bx bxl-instagram'></i></a>
-        <a href="#" class="hover:text-green-500"><i class='bx bxl-whatsapp'></i></a>
+      <!-- Branding -->
+      <div>
+        <p class="text-gray-400 text-sm">
+          Tu tienda de electrodomésticos usados. Calidad garantizada a precios accesibles.
+        </p>
       </div>
-      <p class="text-gray-400 text-sm">
-        Consultas al: <a href="tel:+541132408158" class="hover:text-white">+54 11 3240-8158</a><br>
-        Email: <a href="mailto:contacto@electroused.com" class="hover:text-white">contacto@electroused.com</a>
-      </p>
+
+      <!-- Redes sociales / Contacto -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Seguinos / Contacto</h3>
+        <div class="flex gap-4 text-2xl mb-4">
+          <a href="#" class="hover:text-blue-400"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="hover:text-pink-400"><i class='bx bxl-instagram'></i></a>
+          <a href="#" class="hover:text-green-500"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Consultas al: <a href="tel:+541132408158" class="hover:text-white">+54 11 3240-8158</a><br>
+          Email: <a href="mailto:contacto@electroused.com" class="hover:text-white">contacto@electroused.com</a>
+        </p>
+      </div>
     </div>
-  </div>
 
-  <!-- Mapa -->
-  <div class="w-full h-80 px-6 pb-8">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d819.3608039326904!2d-58.353487230435576!3d-34.769615998305966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32d00367d255b%3A0x557f7c7df5b7cc9a!2sEst%C3%A9tica%20Frambuesa!5e0!3m2!1ses!2sar!4v1759300343003!5m2!1ses!2sar"
-      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg">
-    </iframe>
-  </div>
+    <!-- Mapa -->
+    <div class="w-full h-80 px-6 pb-8">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d819.3608039326904!2d-58.353487230435576!3d-34.769615998305966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32d00367d255b%3A0x557f7c7df5b7cc9a!2sEst%C3%A9tica%20Frambuesa!5e0!3m2!1ses!2sar!4v1759300343003!5m2!1ses!2sar"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg">
+      </iframe>
+    </div>
 
-  <!-- Copyright -->
-  <div class="bg-black/90 py-4 text-center text-gray-500 text-sm">
-    <p>&copy; 2025 Tienda Electrodomésticos Usados. Todos los derechos reservados.</p>
-  </div>
-</footer>
+    <!-- Copyright -->
+    <div class="bg-black/90 py-4 text-center text-gray-500 text-sm">
+      <p>&copy; 2025 Tienda Electrodomésticos Usados. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 
 
@@ -217,7 +240,7 @@
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/5491132408158?text=Hola%20quiero%20informaci%C3%B3n%20de%20un%20producto" target="_blank"
     class="fixed right-5 bottom-5 z-40">
-    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg text-white text-2xl">
+    <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg text-white text-4xl">
       <i class='bx bxl-whatsapp'></i>
     </div>
   </a>
