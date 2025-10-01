@@ -124,8 +124,15 @@ function renderizarProductos(productos) {
           </div>
         </div>
         <div class="mt-4 flex gap-2">
-            <a href="#contacto" data-producto="${producto.titulo}" class="openContactModal font-bold flex-1 inline-flex items-center justify-center gap-2 border-2 border-amber-500 text-amber-600 px-3 py-2 rounded-lg hover:bg-amber-50">
-                Contactar
+            <a 
+                href="${producto.stock === 'Vendido' ? 'javascript:void(0)' : '#contacto'}" 
+                data-producto="${producto.titulo}" 
+                class="font-bold flex-1 inline-flex items-center justify-center gap-2 border-2 px-3 py-2 rounded-lg 
+                  ${producto.stock === 'Vendido'
+                    ? 'border-gray-400 text-gray-400 cursor-not-allowed opacity-60'
+                    : 'openContactModal border-amber-500 text-amber-600 hover:bg-amber-50'}"
+            >
+                ${producto.stock}
             </a>
             <button class="wishlist-btn px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200">
                 <i class='bx bx-heart'></i>
@@ -255,10 +262,10 @@ document.getElementById("form").addEventListener("submit", function (e) {
     this.reset();
 });
 
- // Al hacer click, scrollea hasta el final del viewport
-  document.getElementById("scrollDownBtn").addEventListener("click", () => {
+// Al hacer click, scrollea hasta el final del viewport
+document.getElementById("scrollDownBtn").addEventListener("click", () => {
     window.scrollBy({
-      top: window.innerHeight, // baja una pantalla completa (100vh)
-      behavior: "smooth"
+        top: window.innerHeight, // baja una pantalla completa (100vh)
+        behavior: "smooth"
     });
-  });
+});
