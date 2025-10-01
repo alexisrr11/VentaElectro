@@ -232,19 +232,17 @@ document.getElementById('searchBtn')?.addEventListener('click', () => {
     });
 });
 
-
 //Whatsapp
-
 document.getElementById("form").addEventListener("submit", function (e) {
-    e.preventDefault(); // Evita que recargue la página
+    e.preventDefault();
 
     const nombre = this.name.value.trim();
     const producto = this.producto.value.trim();
 
-    if (!nombre || !producto) return; // Validación simple
+    if (!nombre || !producto) return;
 
-    // Número de WhatsApp (formato internacional sin signos +)
-    const telefono = "5491112345678";
+    // Número de WhatsApp
+    const telefono = "541132408158";
 
     // Mensaje prellenado
     const mensaje = `Hola! Mi nombre es ${nombre} y estoy interesado/a en el producto: ${producto}`;
@@ -252,9 +250,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
     // URL de WhatsApp
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
-    // Abrir WhatsApp en nueva pestaña
     window.open(url, "_blank");
-
-    // Opcional: resetear formulario
     this.reset();
 });
+
