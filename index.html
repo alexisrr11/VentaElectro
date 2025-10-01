@@ -5,31 +5,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tienda - Electrodomésticos Usados</title>
-  <!-- Tailwind CDN (para prototipo rápido) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Iconos (Boxicons) -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
   <style>
     html {
       scroll-behavior: smooth;
     }
-
     .hero-overlay {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
     }
-
     @keyframes float {
 
       0%,
       100% {
         transform: translateY(0);
       }
-
       50% {
         transform: translateY(-10px);
       }
     }
-
     .animate-bounce-slow {
       animation: float 2s ease-in-out infinite;
     }
@@ -162,12 +156,12 @@
   </main>
 
   <!-- Contacto -->
-  <section id="contacto" class="bg-orange-50 py-12">
+  <section id="contacto" class="bg-orange-100 py-12 px-4">
     <div class="container mx-auto max-w-xl">
-      <h2 class="text-2xl font-bold text-center mb-8">Contactanos</h2>
-      <form class="bg-white p-6 rounded shadow space-y-4" id="form">
-        <input class="w-full border rounded p-2" type="text" name="name" placeholder="Nombre Completo" required>
-        <input class="w-full border rounded p-2" type="text" name="producto" placeholder="Producto..." required>
+      <h2 class="text-2xl font-[cursive] font-bold text-center mb-8">Contactanos</h2>
+      <form class="bg-white p-8 rounded-lg shadow space-y-4" id="form">
+        <input class="w-full border-2 rounded p-2" type="text" name="name" placeholder="Nombre Completo" required>
+        <input class="w-full border-2 rounded p-2" type="text" name="producto" placeholder="Producto..." required>
         <button class="bg-amber-600 text-white px-4 py-2 rounded hover:bg-amber-700 transition" type="submit">
           Enviar <i class='text-lg bx bxl-whatsapp'></i>
         </button>
@@ -178,14 +172,11 @@
   <!-- Footer -->
   <footer id="contactos" class="bg-black/95 text-gray-200 pt-6">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 pb-8">
-
-      <!-- Branding -->
       <div>
         <p class="text-gray-400 text-sm">
           Tu tienda de electrodomésticos usados. Calidad garantizada a precios accesibles.
         </p>
       </div>
-
       <!-- Redes sociales / Contacto -->
       <div>
         <h3 class="text-lg font-semibold mb-4">Seguinos / Contacto</h3>
@@ -200,7 +191,6 @@
         </p>
       </div>
     </div>
-
     <!-- Mapa -->
     <div class="w-full h-80 px-6 pb-8">
       <iframe
@@ -209,33 +199,11 @@
         referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg">
       </iframe>
     </div>
-
     <!-- Copyright -->
     <div class="bg-black/90 py-4 text-center text-gray-500 text-sm">
       <p>&copy; 2025 Tienda Electrodomésticos Usados. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-
-
-  <!-- MODAL CONTACTO -->
-  <div id="contactModal" class="fixed inset-0 hidden items-center justify-center z-50">
-    <div class="absolute inset-0 bg-black/40" onclick="closeModal()"></div>
-    <div class="relative bg-white rounded-2xl max-w-md w-full p-6 z-10 shadow-lg">
-      <h3 class="text-lg font-semibold">Contactar vendedor</h3>
-      <p class="text-sm text-gray-500 mt-1">Completa tus datos y te respondemos por WhatsApp o llamada.</p>
-      <form id="contactForm" class="mt-4 grid gap-3">
-        <input type="text" id="name" placeholder="Tu nombre" required class="px-3 py-2 border rounded-lg" />
-        <input type="tel" id="phone" placeholder="Teléfono (whatsapp)" required class="px-3 py-2 border rounded-lg" />
-        <textarea id="message" placeholder="Mensaje / producto de interés" rows="3"
-          class="px-3 py-2 border rounded-lg"></textarea>
-        <div class="flex gap-2">
-          <button type="submit" class="flex-1 bg-amber-500 text-white px-4 py-2 rounded-lg">Enviar</button>
-          <button type="button" onclick="closeModal()" class="flex-1 border rounded-lg">Cancelar</button>
-        </div>
-      </form>
-    </div>
-  </div>
 
   <!-- FLOATING WHATSAPP -->
   <a href="https://wa.me/5491132408158?text=Hola%20quiero%20informaci%C3%B3n%20de%20un%20producto" target="_blank"
