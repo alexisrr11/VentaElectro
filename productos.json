@@ -8,18 +8,20 @@
     "precioAnterior": null,
     "estado": "Buen estado",
     "etiqueta": "Revisado",
-    "garantia": "30 días garantía"
+    "garantia": "30 días garantía",
+    "stock": "Vendido"
   },
   {
     "categoria": "TV",
-    "imagen": "./images/Philips14.jpeg",
-    "titulo": "TV Philips 14'",
+    "imagen": "./images/TCL21'.jpeg",
+    "titulo": "TV TCL 21'",
     "descripcion": "audio-video",
     "precio": "68000",
     "precioAnterior": "90000",
     "estado": "Excelente",
     "etiqueta": "Oferta",
-    "garantia": null
+    "garantia": null,
+    "stock": "Vendido"
   },
   {
     "categoria": "Equipo",
@@ -30,7 +32,8 @@
     "precioAnterior": null,
     "estado": "Bueno",
     "etiqueta": null,
-    "garantia": null
+    "garantia": null,
+    "stock": "Contactar"
   },
   {
     "categoria": "Equipo",
@@ -41,7 +44,8 @@
     "precioAnterior": null,
     "estado": "Bueno",
     "etiqueta": null,
-    "garantia": null
+    "garantia": null,
+    "stock": "Vendido"
   },
   {
     "categoria": "Equipo",
@@ -52,7 +56,8 @@
     "precioAnterior": null,
     "estado": "Bueno",
     "etiqueta": null,
-    "garantia": null
+    "garantia": null,
+    "stock": "Contactar"
   },
   {
     "categoria": "Equipo",
@@ -63,17 +68,19 @@
     "precioAnterior": null,
     "estado": "Bueno",
     "etiqueta": null,
-    "garantia": null
+    "garantia": null,
+    "stock": "Contactar"
   },
   {
     "categoria": "TV",
-    "imagen": "./images/TCL21'.jpeg",
-    "titulo": "TV TCL 21'",
+    "imagen": "./images/Philips14.jpeg",
+    "titulo": "TV Philips 14'",
     "descripcion": "audio-video",
     "precio": "22500",
     "precioAnterior": null,
     "estado": "Bueno",
     "etiqueta": null,
-    "garantia": null
+    "garantia": null,
+    "stock": "Contactar"
   }
 ]
