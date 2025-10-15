@@ -6,7 +6,7 @@
     "descripcion": "Con bluetooth",
     "precio": "45000",
     "precioAnterior": null,
-    "estado": "Buen estado",
+    "estado": "Bueno",
     "etiqueta": "Revisado",
     "garantia": "30 días garantía",
     "stock": "Vendido"
@@ -14,11 +14,11 @@
   {
     "categoria": "TV",
     "imagen": "./images/TCL21'.jpeg",
-    "titulo": "TV TCL 21'",
+    "titulo": "TV TCL 21 pulgadas",
     "descripcion": "audio-video",
     "precio": "68000",
     "precioAnterior": "90000",
-    "estado": "Excelente",
+    "estado": "Muy Bueno",
     "etiqueta": "Oferta",
     "garantia": null,
     "stock": "Vendido"
@@ -74,11 +74,23 @@
   {
     "categoria": "TV",
     "imagen": "./images/Philips14.jpeg",
-    "titulo": "TV Philips 14'",
+    "titulo": "TV Philips 14 pulgadas",
     "descripcion": "audio-video",
     "precio": "22500",
     "precioAnterior": null,
     "estado": "Bueno",
+    "etiqueta": null,
+    "garantia": null,
+    "stock": "Contactar"
+  },
+  {
+    "categoria": "Monitor",
+    "imagen": "./images/Monitor lg 19 frente.jpeg",
+    "titulo": "LG 19 pulgadas",
+    "descripcion": "VGA, Sin HDMI",
+    "precio": "60000",
+    "precioAnterior": null,
+    "estado": "Muy Bueno",
     "etiqueta": null,
     "garantia": null,
     "stock": "Contactar"
