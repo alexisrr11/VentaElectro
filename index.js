@@ -187,18 +187,38 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
 });
 
-// Contact form: abrir WhatsApp con mensaje (simula envío)
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim() || 'Hola, me interesa el producto.';
-    // Prepara mensaje para WhatsApp
-    const text = encodeURIComponent`(Hola, soy \${name}. \nTel: \${phone}\n\${message}\)`;
-    const wa = 'https://wa.me/5491112345678?text=' + text;
-    window.open(wa, '_blank');
-    closeModal();
-});
+// === MODAL DE IMAGEN AMPLIADA ===
+function inicializarModalImagen() {
+  const modal = document.getElementById("modal-imagen");
+  const imgAmpliada = document.getElementById("imagen-ampliada");
+  const btnCerrar = document.getElementById("cerrar-modal-imagen");
+
+  // Delegar el click en el contenedor principal
+  document.getElementById("productos").addEventListener("click", e => {
+    const img = e.target.closest("img");
+    if (img && img.src) {
+      imgAmpliada.src = img.src;
+      modal.classList.remove("hidden");
+    }
+  });
+
+  btnCerrar.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    imgAmpliada.src = "";
+  });
+
+  // Cerrar modal al hacer clic fuera de la imagen
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      imgAmpliada.src = "";
+    }
+  });
+}
+
+// Inicializar modal de imagen
+inicializarModalImagen();
+
 
 // Filtros (simple demo frontend)
 const categoryFilter = document.getElementById('categoryFilter');
@@ -238,7 +258,6 @@ document.getElementById('searchBtn')?.addEventListener('click', () => {
         else card.classList.add('hidden');
     });
 });
-
 
 //Whatsapp
 document.getElementById("form").addEventListener("submit", function (e) {
