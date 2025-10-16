@@ -91,7 +91,32 @@ async function cargarDetalle() {
 
 cargarDetalle();
 
+//Whatsapp
+function whatsappFormulario() {
+    document.getElementById("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        const nombre = this.name.value.trim();
+        const producto = this.producto.value.trim();
+    
+        if (!nombre || !producto) return;
+    
+        // Número de WhatsApp
+        const telefono = "541132408158";
+    
+        // Mensaje prellenado
+        const mensaje = `Hola! Mi nombre es ${nombre} y estoy interesado/a en el producto: ${producto}`;
+    
+        // URL de WhatsApp
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    
+        window.open(url, "_blank");
+        this.reset();
+    });
+}
+whatsappFormulario();
 
+//Menu
 const mobileMenu = document.getElementById("mobile-menu");
 const mobileMenuBtn = document.getElementById("mobile-menu-btn");
 mobileMenuBtn.addEventListener("click", () => {
