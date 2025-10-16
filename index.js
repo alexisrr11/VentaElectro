@@ -104,41 +104,48 @@ function renderizarProductos(productos) {
 
         categorias[categoria].forEach(producto => {
             const card = document.createElement("article");
-            card.className = "product-card bg-white rounded-2xl shadow p-4 flex flex-col bg-white/90";
+            card.className = "product-card bg-white rounded-2xl shadow p-4 flex flex-col bg-white/90 cursor-pointer";
 
             card.innerHTML = `
-        <div class="relative rounded-lg overflow-hidden">
-          <img src="${producto.imagen}" alt="${producto.titulo}" class="w-full object-contain rounded-lg">
-          ${producto.etiqueta ? `<div class="absolute top-3 left-3 bg-amber-500 text-white px-2 py-1 rounded-md text-xs font-semibold">${producto.etiqueta}</div>` : ""}
-          ${producto.garantia ? `<div class="absolute top-3 right-3 bg-white/80 text-gray-800 px-2 py-1 rounded-md text-xs">${producto.garantia}</div>` : ""}
-        </div>
-        <div class="mt-4 flex-1">
-          <h3 class="text-lg font-semibold">${producto.titulo}</h3>
-          <p class="text-sm text-gray-500 mt-1">${producto.descripcion}</p>
-          <div class="mt-3 flex items-center justify-between">
-            <div>
-              ${producto.precioAnterior ? `<div class="text-gray-500 line-through text-sm">$ ${producto.precioAnterior}</div>` : ""}
-              <div class="text-amber-600 font-bold text-xl">$ ${producto.precio}</div>
-            </div>
-            <div class="text-sm text-green-600 font-medium">${producto.estado}</div>
-          </div>
-        </div>
-        <div class="mt-4 flex gap-2">
-            <a 
-                href="${producto.stock === 'Vendido' ? 'javascript:void(0)' : '#contacto'}" 
-                data-producto="${producto.titulo}" 
-                class="font-bold flex-1 inline-flex items-center justify-center gap-2 border-2 px-3 py-2 rounded-lg 
-                  ${producto.stock === 'Vendido'
-                    ? 'border-gray-400 text-gray-400 cursor-not-allowed opacity-60'
-                    : 'openContactModal border-amber-500 text-amber-600 hover:bg-amber-50'}"
-            >
-                ${producto.stock}
-            </a>
-            <button class="wishlist-btn px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200">
-                <i class='bx bx-heart'></i>
-            </button>
-        </div>
-      `;
+              <div class="relative rounded-lg overflow-hidden">
+                <img src="${producto.imagen}" alt="${producto.titulo}" class="w-full object-contain rounded-lg">
+                ${producto.etiqueta ? `<div class="absolute top-3 left-3 bg-amber-500 text-white px-2 py-1 rounded-md text-xs font-semibold">${producto.etiqueta}</div>` : ""}
+                ${producto.garantia ? `<div class="absolute top-3 right-3 bg-white/80 text-gray-800 px-2 py-1 rounded-md text-xs">${producto.garantia}</div>` : ""}
+              </div>
+              <div class="mt-4 flex-1">
+                <h3 class="text-lg font-semibold">${producto.titulo}</h3>
+                <p class="text-sm text-gray-500 mt-1">${producto.descripcion}</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div>
+                    ${producto.precioAnterior ? `<div class="text-gray-500 line-through text-sm">$ ${producto.precioAnterior}</div>` : ""}
+                    <div class="text-amber-600 font-bold text-xl">$ ${producto.precio}</div>
+                  </div>
+                  <div class="text-sm text-green-600 font-medium">${producto.estado}</div>
+                </div>
+              </div>
+              <div class="mt-4 flex gap-2">
+                  <a 
+                      href="${producto.stock === 'Vendido' ? 'javascript:void(0)' : '#contacto'}" 
+                      data-producto="${producto.titulo}" 
+                      class="font-bold flex-1 inline-flex items-center justify-center gap-2 border-2 px-3 py-2 rounded-lg 
+                        ${producto.stock === 'Vendido'
+                          ? 'border-gray-400 text-gray-400 cursor-not-allowed opacity-60'
+                          : 'openContactModal border-amber-500 text-amber-600 hover:bg-amber-50'}"
+                  >
+                      ${producto.stock}
+                  </a>
+                  <button class="wishlist-btn px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200">
+                      <i class='bx bx-heart'></i>
+                  </button>
+              </div>
+            `;
+
+            // 👉 Redirigir al hacer click (excepto en botones)
+            card.addEventListener("click", (e) => {
+                if (!e.target.closest("a") && !e.target.closest("button")) {
+                    window.location.href = `./secundario.html?id=${producto.id}`;
+                }
+            });
 
             grid.appendChild(card);
         });
@@ -149,6 +156,7 @@ function renderizarProductos(productos) {
     inicializarWishlist();
 }
 
+
 // 🔹 Listeners
 document.getElementById("categoryFilter").addEventListener("change", aplicarFiltros);
 document.getElementById("sortSelect").addEventListener("change", aplicarFiltros);
@@ -156,7 +164,6 @@ document.getElementById("searchInput").addEventListener("input", aplicarFiltros)
 
 // 🔹 Inicial
 cargarProductos();
-
 
 
 // Mobile menu toggle
@@ -186,38 +193,6 @@ function closeModal() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
 });
-
-// === MODAL DE IMAGEN AMPLIADA ===
-function inicializarModalImagen() {
-  const modal = document.getElementById("modal-imagen");
-  const imgAmpliada = document.getElementById("imagen-ampliada");
-  const btnCerrar = document.getElementById("cerrar-modal-imagen");
-
-  // Delegar el click en el contenedor principal
-  document.getElementById("productos").addEventListener("click", e => {
-    const img = e.target.closest("img");
-    if (img && img.src) {
-      imgAmpliada.src = img.src;
-      modal.classList.remove("hidden");
-    }
-  });
-
-  btnCerrar.addEventListener("click", () => {
-    modal.classList.add("hidden");
-    imgAmpliada.src = "";
-  });
-
-  // Cerrar modal al hacer clic fuera de la imagen
-  modal.addEventListener("click", e => {
-    if (e.target === modal) {
-      modal.classList.add("hidden");
-      imgAmpliada.src = "";
-    }
-  });
-}
-
-// Inicializar modal de imagen
-inicializarModalImagen();
 
 
 // Filtros (simple demo frontend)
@@ -288,3 +263,4 @@ document.getElementById("scrollDownBtn").addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+

@@ -2,18 +2,26 @@
   {
     "categoria": "Equipo",
     "imagen": "./images/AudioLogic.jpeg",
+    "imagenes": [
+      "./images/AudioLogic.jpeg",
+      "./images/AudioLogic.jpeg"
+    ],
     "titulo": "AudioLogic",
     "descripcion": "Con bluetooth",
-    "precio": "45000",
+    "precio": "15000",
     "precioAnterior": null,
-    "estado": "Bueno",
-    "etiqueta": "Revisado",
-    "garantia": "30 días garantía",
+    "estado": "Regular",
+    "etiqueta": "Oferta",
+    "garantia": null,
     "stock": "Vendido"
   },
   {
     "categoria": "TV",
     "imagen": "./images/TCL21'.jpeg",
+    "imagenes": [
+      "./images/TCL21'.jpeg",
+      "./images/TCL21'.jpeg"
+    ],
     "titulo": "TV TCL 21 pulgadas",
     "descripcion": "audio-video",
     "precio": "68000",
@@ -26,6 +34,10 @@
   {
     "categoria": "Equipo",
     "imagen": "./images/Takata.jpeg",
+    "imagenes": [
+      "./images/Takata.jpeg",
+      "./images/Takata.jpeg"
+    ],
     "titulo": "Takata 200w",
     "descripcion": "Con bluetooth",
     "precio": "22500",
@@ -38,6 +50,10 @@
   {
     "categoria": "Equipo",
     "imagen": "./images/Sanyo.jpeg",
+    "imagenes": [
+      "./images/Sanyo.jpeg",
+      "./images/Sanyo.jpeg"
+    ],
     "titulo": "Sanyo",
     "descripcion": "Con bluetooth",
     "precio": "22500",
@@ -50,6 +66,10 @@
   {
     "categoria": "Equipo",
     "imagen": "./images/WhatsApp Image 2025-09-30 at 23.34.27 (1).jpeg",
+    "imagenes": [
+      "./images/WhatsApp Image 2025-09-30 at 23.34.27 (1).jpeg",
+      "./images/WhatsApp Image 2025-09-30 at 23.34.27 (1).jpeg"
+    ],
     "titulo": "LG 20Ls",
     "descripcion": "Con bluetooth",
     "precio": "22500",
@@ -62,6 +82,10 @@
   {
     "categoria": "Equipo",
     "imagen": "./images/SanyoNaranja.jpeg",
+    "imagenes": [
+      "./images/SanyoNaranja.jpeg",
+      "./images/SanyoNaranja.jpeg"
+    ],
     "titulo": "Sanyo Naranja",
     "descripcion": "Con bluetooth",
     "precio": "22500",
@@ -74,6 +98,10 @@
   {
     "categoria": "TV",
     "imagen": "./images/Philips14.jpeg",
+    "imagenes": [
+      "./images/Philips14.jpeg",
+      "./images/Philips14.jpeg"
+    ],
     "titulo": "TV Philips 14 pulgadas",
     "descripcion": "audio-video",
     "precio": "22500",
@@ -86,6 +114,10 @@
   {
     "categoria": "Monitor",
     "imagen": "./images/Monitor lg 19 frente.jpeg",
+    "imagenes": [
+      "./images/Monitor lg 19 frente.jpeg",
+      "./images/Monitor lg 19 trasero.jpeg"
+    ],
     "titulo": "LG 19 pulgadas",
     "descripcion": "VGA, Sin HDMI",
     "precio": "60000",
