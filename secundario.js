@@ -22,6 +22,7 @@ async function cargarDetalle() {
         
         <!-- Imagen principal -->
         <div class="flex-1 flex flex-col items-center">
+          <h2 class="text-3xl font-bold mb-4">${producto.titulo}</h2>
           <img id="imagenPrincipal" src="${imagenes[0]}" 
                alt="${producto.titulo}" 
                class="w-auto max-h-[50vh] rounded-lg object-contain cursor-pointer shadow-lg">
@@ -37,12 +38,11 @@ async function cargarDetalle() {
         </div>
 
         <!-- Detalles -->
-        <div class="flex-1">
-          <h2 class="text-3xl font-bold mb-2">${producto.titulo}</h2>
+        <div class="flex-1 md:pt-10">
           <p class="text-gray-700 mb-4"><strong>Estado:</strong> ${producto.estado}</p>
           <p class="text-gray-600 mb-2">${producto.descripcion}</p>
           <div class="text-amber-600 font-bold text-2xl mb-6">$ ${producto.precio}</div>
-          <a href="index.html" class="text-blue-600 hover:underline">← Volver</a>
+          <a href="index.html" class="fixed top-20 left-5 text-blue-600 font-semibold hover:underline">← Volver</a>
         </div>
       </div>
     </div>
