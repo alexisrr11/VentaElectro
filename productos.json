@@ -112,6 +112,23 @@
     "stock": "Contactar"
   },
   {
+    "categoria": "Otros",
+    "imagen": "./images/Exp. Adelante.jpeg",
+    "imagenes": [
+      "./images/Exp. Adelante.jpeg",
+      "./images/Exp. Atras.jpeg",
+      "./images/Exp. Desarmada.jpeg"
+    ],
+    "titulo": "Exprimidor Yelmo",
+    "descripcion": "Con doble cono para distintos tamaños de frutas - Filtro removibles - Apoyos de goma antideslizantes - Fácil limpieza y armado",
+    "precio": "20000",
+    "precioAnterior": null,
+    "estado": "Muy Bueno",
+    "etiqueta": null,
+    "garantia": null,
+    "stock": "Ultimo producto"
+  },
+  {
     "categoria": "Monitor",
     "imagen": "./images/Monitor lg 19 frente.jpeg",
     "imagenes": [
